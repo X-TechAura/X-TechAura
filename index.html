@@ -41,19 +41,19 @@
       font-weight: bold;
     }
     .tagline {
-      font-size: 1rem;
+      font-size: 1.1rem;
       color: var(--primary-color);
-      margin-top: 0.3rem;
+      margin-top: 0.5rem;
     }
     nav {
       display: flex;
       justify-content: center;
-      gap: 2rem;
-      padding: 1rem;
-      background-color: var(--bg-color);
       flex-wrap: wrap;
+      background-color: var(--secondary-color);
+      padding: 0.5rem;
     }
     nav a {
+      margin: 0 1rem;
       text-decoration: none;
       color: var(--text-color);
       font-weight: 500;
@@ -61,13 +61,12 @@
     .theme-toggle {
       position: absolute;
       top: 1rem;
-      right: 1rem;
+      right: 2rem;
       cursor: pointer;
       font-size: 1.2rem;
     }
     .section {
-      padding: 3rem 5%;
-      text-align: center;
+      padding: 3rem 5vw;
     }
     .about p {
       max-width: 900px;
@@ -82,11 +81,10 @@
       position: relative;
       width: 100%;
       overflow: hidden;
-      min-height: 400px;
+      padding: 2rem 0;
     }
     .service-card {
       width: 350px;
-      margin: auto;
       background-color: var(--secondary-color);
       padding: 1.5rem;
       border-radius: 10px;
@@ -107,8 +105,7 @@
     .nav-btns {
       display: flex;
       justify-content: space-between;
-      max-width: 900px;
-      margin: 2rem auto 0;
+      margin-top: 1rem;
     }
     .nav-btns button {
       background: none;
@@ -120,12 +117,9 @@
     .projects-grid, .reviews-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      justify-items: center;
+      gap: 1.5rem;
     }
     .project, .review-card {
-      width: 100%;
-      max-width: 400px;
       background: var(--secondary-color);
       padding: 1rem;
       border-radius: 10px;
@@ -138,10 +132,10 @@
       width: 100%;
       height: 150px;
       object-fit: cover;
-      border-radius: 8px;
+      border-radius: 5px;
       margin-bottom: 0.5rem;
     }
-    .review-card p {
+    .review-card {
       font-style: italic;
     }
     .contact form {
@@ -189,30 +183,28 @@
   <section id="services" class="section">
     <h2>Our Services</h2>
     <div class="services-container">
+      <button onclick="prevService()">❮</button>
       <div class="service-card active">
-        <img src="https://via.placeholder.com/300x150?text=Embedded+Systems" alt="Embedded Systems">
+        <img src="https://via.placeholder.com/350x180?text=Embedded+Systems" alt="Embedded Systems">
         <h3>Embedded Systems</h3>
         <p>Custom embedded system solutions for smart devices, IoT, and industrial automation.</p>
       </div>
       <div class="service-card">
-        <img src="https://via.placeholder.com/300x150?text=Website+Design" alt="Web Design">
+        <img src="https://via.placeholder.com/350x180?text=Website+Design" alt="Web Design">
         <h3>Website Designing</h3>
         <p>Modern, responsive, and fast-loading websites tailored for startups and small businesses.</p>
       </div>
       <div class="service-card">
-        <img src="https://via.placeholder.com/300x150?text=App+Development" alt="App Development">
+        <img src="https://via.placeholder.com/350x180?text=App+Development" alt="App Development">
         <h3>Android / iOS App Development</h3>
         <p>Beautiful and functional mobile applications to bring your product or service to life.</p>
       </div>
       <div class="service-card">
-        <img src="https://via.placeholder.com/300x150?text=Poster+Design" alt="Poster Design">
+        <img src="https://via.placeholder.com/350x180?text=Poster+Design" alt="Poster Design">
         <h3>Poster Designs for Visual Branding</h3>
         <p>Creative poster and branding designs that make your brand stand out in the crowd.</p>
       </div>
-    </div>
-    <div class="nav-btns">
-      <button onclick="prevService()">❮ Prev</button>
-      <button onclick="nextService()">Next ❯</button>
+      <button onclick="nextService()">❯</button>
     </div>
   </section>
 
@@ -220,12 +212,12 @@
     <h2>Our Projects</h2>
     <div class="projects-grid">
       <div class="project">
-        <img src="https://via.placeholder.com/400x150?text=Vathsalyam+School" alt="Project Image">
+        <img src="https://via.placeholder.com/300x150?text=Vathsalyam+School" alt="Vathsalyam">
         <h3>Vathsalyam Special School</h3>
         <p>Developed an accessible and informative website to support their educational initiatives.</p>
       </div>
       <div class="project">
-        <img src="https://via.placeholder.com/400x150?text=Friends+Construction" alt="Project Image">
+        <img src="https://via.placeholder.com/300x150?text=Friends+Construction" alt="Friends Construction">
         <h3>Friends Construction and Architects</h3>
         <p>Designed and delivered a sleek, professional website showcasing their architecture projects.</p>
       </div>
