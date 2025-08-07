@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>X-TechAura</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --bg-color: #ffffff;
+      --text-color: #000000;
+      --primary-color: #1e90ff;
+      --secondary-color: #f4f4f4;
+    }
+    [data-theme="dark"] {
+      --bg-color: #121212;
+      --text-color: #ffffff;
+      --primary-color: #1e90ff;
+      --secondary-color: #1e1e1e;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      transition: background-color 0.3s, color 0.3s;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background-color: var(--secondary-color);
+      flex-wrap: wrap;
+    }
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    .tagline {
+      font-size: 1rem;
+      color: var(--primary-color);
+    }
+    nav {
+      text-align: center;
+      margin: 1rem 0;
+    }
+    nav a {
+      margin: 0 1rem;
+      text-decoration: none;
+      color: var(--text-color);
+      font-weight: 500;
+    }
+    .theme-toggle {
+      cursor: pointer;
+      font-size: 1.2rem;
+    }
+    .section {
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+    .about p {
+      max-width: 700px;
+      margin: auto;
+      line-height: 1.6;
+      font-size: 1.1rem;
+    }
+    .services-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+    }
+    .service-card {
+      width: 300px;
+      margin: auto;
+      background-color: var(--secondary-color);
+      padding: 1.5rem;
+      border-radius: 10px;
+      transition: transform 0.3s;
+      display: none;
+    }
+    .service-card.active {
+      display: block;
+    }
+    .service-card:hover {
+      transform: scale(1.05);
+    }
+    .service-card img {
+      width: 100%;
+      height: 150px;
+      object-fit: contain;
+    }
+    .nav-btns {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 1rem;
+    }
+    .nav-btns button {
+      background: none;
+      border: none;
+      font-size: 2rem;
+      cursor: pointer;
+      color: var(--primary-color);
+    }
+    .project, .review-card {
+      max-width: 600px;
+      margin: 1rem auto;
+      background: var(--secondary-color);
+      padding: 1rem;
+      border-radius: 10px;
+    }
+    .contact form {
+      display: flex;
+      flex-direction: column;
+      max-width: 400px;
+      margin: auto;
+      gap: 1rem;
+    }
+    .contact input, .contact select {
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .contact button {
+      background-color: var(--primary-color);
+      color: #fff;
+      border: none;
+      padding: 0.75rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    @media (max-width: 600px) {
+      nav a {
+        margin: 0 0.5rem;
+      }
+      .service-card {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">X-TechAura</div>
+    <div class="tagline">Affordable Tech & Design Solutions</div>
+    <div class="theme-toggle" onclick="toggleTheme()"><i class="fas fa-moon"></i></div>
+  </header>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+    <a href="#projects">Projects</a>
+  </nav>
+
+  <section id="about" class="section about">
+    <h2>About Us</h2>
+    <p>
+      X-TechAura is a passionate tech & design startup focused on delivering creative, functional, and budget-friendly solutions. From embedded systems and modern websites to intuitive apps and striking poster designs, we help small businesses and startups turn ideas into reality — on time and within budget.
+    </p>
+  </section>
+
+  <section id="services" class="section">
+    <h2>Our Services</h2>
+    <div class="services-container">
+      <div class="service-card active">
+        <img src="https://via.placeholder.com/300x150?text=Embedded+Systems" alt="Embedded Systems">
+        <h3>Embedded Systems</h3>
+        <p>Custom embedded system solutions for smart devices, IoT, and industrial automation.</p>
+      </div>
+      <div class="service-card">
+        <img src="https://via.placeholder.com/300x150?text=Website+Design" alt="Web Design">
+        <h3>Website Designing</h3>
+        <p>Modern, responsive, and fast-loading websites tailored for startups and small businesses.</p>
+      </div>
+      <div class="service-card">
+        <img src="https://via.placeholder.com/300x150?text=App+Development" alt="App Development">
+        <h3>Android / iOS App Development</h3>
+        <p>Beautiful and functional mobile applications to bring your product or service to life.</p>
+      </div>
+      <div class="service-card">
+        <img src="https://via.placeholder.com/300x150?text=Poster+Design" alt="Poster Design">
+        <h3>Poster Designs for Visual Branding</h3>
+        <p>Creative poster and branding designs that make your brand stand out in the crowd.</p>
+      </div>
+    </div>
+    <div class="nav-btns">
+      <button onclick="prevService()">❮</button>
+      <button onclick="nextService()">❯</button>
+    </div>
+  </section>
+
+  <section id="projects" class="section projects">
+    <h2>Our Projects</h2>
+    <div class="project">
+      <h3>Vathsalyam Special School</h3>
+      <p>Developed an accessible and informative website to support their educational initiatives.</p>
+    </div>
+    <div class="project">
+      <h3>Friends Construction and Architects, Coimbatore</h3>
+      <p>Designed and delivered a sleek, professional website showcasing their architecture projects.</p>
+    </div>
+  </section>
+
+  <section class="section reviews">
+    <h2>Client Reviews</h2>
+    <div class="review-card">
+      <strong>Vathsalyam Special School:</strong>
+      <p>“X-TechAura delivered a wonderful, clean website that truly represents our school. Very cooperative and budget-friendly!”</p>
+    </div>
+    <div class="review-card">
+      <strong>Friends Construction and Architects:</strong>
+      <p>“Their team was fast, creative, and responsive. We’re very happy with the site they built for us!”</p>
+    </div>
+  </section>
+
+  <section id="contact" class="section contact">
+    <h2>Talk to Our Expert</h2>
+    <form onsubmit="event.preventDefault(); showAck();">
+      <input type="text" placeholder="Your Name" required />
+      <input type="text" placeholder="Location" required />
+      <input type="email" placeholder="Email ID" required />
+      <select required>
+        <option value="">What Service?</option>
+        <option>Embedded Systems</option>
+        <option>Website Design</option>
+        <option>App Development</option>
+        <option>Poster Design</option>
+      </select>
+      <button type="submit">Send</button>
+    </form>
+    <p id="ack" style="margin-top:1rem; color:green; font-weight:bold;"></p>
+  </section>
+
+  <script>
+    function toggleTheme() {
+      const currentTheme = document.documentElement.getAttribute("data-theme");
+      document.documentElement.setAttribute(
+        "data-theme",
+        currentTheme === "dark" ? "light" : "dark"
+      );
+    }
+
+    let currentIndex = 0;
+    const services = document.querySelectorAll('.service-card');
+
+    function showService(index) {
+      services.forEach((card, i) => {
+        card.classList.remove('active');
+        if (i === index) card.classList.add('active');
+      });
+    }
+
+    function nextService() {
+      currentIndex = (currentIndex + 1) % services.length;
+      showService(currentIndex);
+    }
+
+    function prevService() {
+      currentIndex = (currentIndex - 1 + services.length) % services.length;
+      showService(currentIndex);
+    }
+
+    function showAck() {
+      document.getElementById("ack").textContent = "Thank you! Our team will reach you shortly.";
+    }
+  </script>
+</body>
+</html>
